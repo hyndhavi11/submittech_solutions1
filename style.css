@@ -1,0 +1,30 @@
+body {
+    padding-top: 20px;
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.table {
+    background-color: white;
+}
+
+.badge {
+    font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    .card {
+        margin-bottom: 15px;
+    }
+}

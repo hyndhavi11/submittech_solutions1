@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Edit Medication{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Edit Medication</h2>
+
+<form method="POST">
+    <div class="mb-3">
+        <label for="name" class="form-label">Medication Name</label>
+        <input type="text" class="form-control" id="name" name="name" value="{{ medication[2] }}" required>
+    </div>
+    <div class="mb-3">
+        <label for="dosage" class="form-label">Dosage</label>
+        <input type="text" class="form-control" id="dosage" name="dosage" value="{{ medication[3] }}" required>
+    </div>
+    <div class="mb-3">
+        <label for="frequency" class="form-label">Frequency</label>
+        <input type="text" class="form-control" id="frequency" name="frequency" value="{{ medication[4] }}" required>
+    </div>
+    <div class="mb-3">
+        <label for="start_date" class="form-label">Start Date</label>
+        <input type="date" class="form-control" id="start_date" name="start_date" value="{{ medication[5] }}" required>
+    </div>
+    <div class="mb-3">
+        <label for="notes" class="form-label">Notes</label>
+        <textarea class="form-control" id="notes" name="notes" rows="3">{{ medication[6] }}</textarea>
+    </div>
+    <div class="mb-3">
+        <label for="status" class="form-label">Status</label>
+        <select class="form-select" id="status" name="status" required>
+            <option value="Active" {% if medication[7]=='Active' %}selected{% endif %}>Active</option>
+            <option value="Discontinued" {% if medication[7]=='Discontinued' %}selected{% endif %}>Discontinued</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Medication</button>
+    <a href="{{ url_for('medications') }}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
